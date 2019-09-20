@@ -1,0 +1,101 @@
+@import './variables';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+html{
+  font-size: 24px; //实际效果减半12px
+}
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  background-color: #f1f1f1;
+}
+
+//公共样式类
+
+//文本溢出省略号
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.border{
+  border: 1px solid map-get($colors, 'light' )
+}
+//圆角
+.radius-1{
+  border-radius: 10px;
+}
+.radius-50{
+  border-radius: 50%;
+}
+//width, height
+.w-100{
+  width: 100%;
+}
+.h-100{
+  height: 100%;
+}
+//flex 定义
+.d-flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-1{
+  flex: 1;
+}
+
+//排除tabbar定高
+.calc{
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
+
+
+
+
+
+//1px边框工具类定义
+@each $dir in (top, right, bottom, left){
+  .border-#{$dir}{
+    border-#{$dir}: 1px solid map-get($colors, 'light' );
+  }
+}
+//颜色工具类定义
+@each $key, $color in $colors{
+  .text-#{$key}{
+    color: $color;
+  }
+  .bg-#{$key}{
+    background-color: $color;
+  }
+}
+//文本对齐工具类定义
+@each $dir in (left, center, right){
+  .text-#{$dir}{
+    text-align: $dir !important;
+  }
+}
+//主轴工具类
+@each $key, $value in $flex-jc {
+  .jc-#{$key}{
+    justify-content: $value;
+  }
+}
+//交叉轴工具类
+@each $key, $value in $flex-ai {
+  .ai-#{$key}{
+    align-items: $value;
+  }
+}

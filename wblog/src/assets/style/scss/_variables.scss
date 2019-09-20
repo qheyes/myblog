@@ -1,0 +1,34 @@
+//变量库
+
+//colors 颜色定义
+$colors: (
+  "red": #f56c6c,
+  "primary-1":hsl(30, 87%, 79%),
+  "primary": #dbb579,
+  "green": #42b983,
+  "glight": #C8EFD4,
+  "blue": #f5f8fa,
+  "white": #fff,
+  "light": #eef2f8,
+  "grey": #999,
+  "dark": #333,
+  "black": #000,
+);
+
+//主轴对齐方式
+$flex-jc:(
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+);
+
+//交叉轴对齐方式
+$flex-ai:(
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch,
+);
+
